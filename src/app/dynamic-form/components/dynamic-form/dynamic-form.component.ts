@@ -36,6 +36,17 @@ export class DynamicFormComponent implements OnInit {
                 name: "question03",
                 content: "你的生日是什么？",
                 type: "yearmonth"
+            },
+            {
+                name: "question04",
+                content: "你的偶像是？",
+                type: "mutli-select",
+                answerList: [
+                    { id: "1", value: "刘德华" },
+                    { id: "2", value: "张学友" },
+                    { id: "3", value: "郭富城" },
+                    { id: "4", value: "黎明" }
+                ]
             }
         ],
         sugaryHospInfo: {

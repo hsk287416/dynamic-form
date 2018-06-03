@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ConfigModel } from '../dynamic-form/models/config.model';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Injectable()
 export class GroupCreaterService {
@@ -19,6 +19,10 @@ export class GroupCreaterService {
                     month: this.fb.control("")
                 });
                 questionGrp.addControl(question.name, yearmonthGroup);
+            } else if (question.type == "mutli-select"){
+                let arr: FormArray = this.fb.array([]);
+                arr.push(this.fb.control(""));
+                questionGrp.addControl(question.name, arr);
             } else {
                 questionGrp.addControl(question.name, this.fb.control(""));
             }
