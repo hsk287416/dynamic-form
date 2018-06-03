@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { RadioQuestionComponent } from '../components/radio-question/radio-question.component';
 import { SelectQuestionComponent } from '../components/select-question/select-question.component';
 import { YearmonthQuestionComponent } from '../components/yearmonth-question/yearmonth-question.component';
+import { MutliSelectQuestionComponent } from '../components/mutli-select-question/mutli-select-question.component';
 
 @Directive({
     selector: '[dynamicQuestion]'
@@ -14,7 +15,8 @@ export class DynamicQuestionDirective implements OnInit {
     componentMap = {
         "radio": RadioQuestionComponent,
         "select": SelectQuestionComponent,
-        "yearmonth": YearmonthQuestionComponent
+        "yearmonth": YearmonthQuestionComponent,
+        "mutli-select": MutliSelectQuestionComponent
     };
     constructor(
         private resolver: ComponentFactoryResolver,

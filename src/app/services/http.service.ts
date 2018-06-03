@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { Http, RequestOptionsArgs, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class HttpService {
-    private address: string = "http://127.0.0.1:3000/";
+    private address: string = environment.serverAddress;
     constructor(
         private http: Http
     ) { }
