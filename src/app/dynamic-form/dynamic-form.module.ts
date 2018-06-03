@@ -8,8 +8,6 @@ import { YearmonthQuestionComponent } from './components/yearmonth-question/year
 import { SelectQuestionComponent } from './components/select-question/select-question.component';
 import { DynamicQuestionDirective } from './directives/dynamic-question.directive';
 import { HospSugaryFieldsComponent } from './components/hosp-sugary-fields/hosp-sugary-fields.component';
-import { GroupCreaterService } from '../services/group-creater.service';
-import { MutliSelectQuestionComponent } from './components/mutli-select-question/mutli-select-question.component';
 
 @NgModule({
     imports: [
@@ -24,8 +22,7 @@ import { MutliSelectQuestionComponent } from './components/mutli-select-question
         YearmonthQuestionComponent,
         SelectQuestionComponent,
         DynamicQuestionDirective,
-        HospSugaryFieldsComponent,
-        MutliSelectQuestionComponent
+        HospSugaryFieldsComponent
     ],
     exports: [
         DynamicFormComponent
@@ -33,11 +30,7 @@ import { MutliSelectQuestionComponent } from './components/mutli-select-question
     entryComponents: [
         RadioQuestionComponent,
         YearmonthQuestionComponent,
-        SelectQuestionComponent,
-        MutliSelectQuestionComponent
-    ],
-    providers: [
-        GroupCreaterService
+        SelectQuestionComponent
     ]
 })
 export class DynamicFormModule { }
