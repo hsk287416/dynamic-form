@@ -1,0 +1,8 @@
+<div [formGroup]="group">
+    <select [formControlName]="question.name" class="custom-select custom-select-sm">
+        <option value=""></option>
+        <option *ngFor="let answer of question.answerList" value="{{answer.id}}">
+            {{answer.value}}
+        </option>
+    </select>
+</div>

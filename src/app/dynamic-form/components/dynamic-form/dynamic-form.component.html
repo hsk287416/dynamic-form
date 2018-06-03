@@ -1,0 +1,9 @@
+<div class="col-10 offset-1">
+    <form [formGroup]="form">
+        <question-fields [group]="form" [questionList]="config.questions"></question-fields>
+        <hosp-sugary-fields [group]="form" [sugaryHospInfo]="config.sugaryHospInfo"></hosp-sugary-fields>
+    </form>
+
+    <hr>
+    <pre>{{form.value | json}}</pre>
+</div>

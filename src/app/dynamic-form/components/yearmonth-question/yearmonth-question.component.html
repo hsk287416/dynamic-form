@@ -1,0 +1,14 @@
+<div [formGroup]="group">
+    <div [formGroupName]="question.name" class="form-inline">
+        <select formControlName="year" class="custom-select custom-select-sm" id="{{question.name}}-year">
+            <option value=""></option>
+            <option *ngFor="let y of yearList" value="{{y}}">{{y}}</option>
+        </select>
+        <label for="{{question.name}}-year" class="col-form-label-sm year-label">年</label>
+        <select formControlName="month" class="custom-select custom-select-sm" id="{{question.name}}-month">
+            <option value=""></option>
+            <option *ngFor="let m of monthList" value="{{m}}">{{m}}</option>
+        </select>
+        <label for="{{question.name}}-month" class="col-form-label-sm">月</label>
+    </div>
+</div>

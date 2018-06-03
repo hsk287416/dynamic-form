@@ -1,0 +1,34 @@
+$primary-color: #0094ff;
+$white-color: #ffffff;
+.question-table {
+    border-collapse: collapse;
+    th {
+        border-right: 1px solid $white-color;
+        background: $primary-color;
+        color: $white-color;
+        &:nth-last-child(1) {
+            border-right: 1px solid $primary-color;
+        }
+    }
+    td {
+        border: 1px solid $primary-color;
+        border-left: none;
+        &:nth-child(1) {
+            border-left: 1px solid $primary-color;
+        }
+    }
+    tr {
+        margin-bottom: 1px;
+    }
+    thead {
+        margin-bottom: 0px;
+        tr {
+            &:nth-child(1) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+    tbody {
+        margin-top: 0px;
+    }
+}

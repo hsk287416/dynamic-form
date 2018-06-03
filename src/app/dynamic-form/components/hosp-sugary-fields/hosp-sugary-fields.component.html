@@ -1,0 +1,95 @@
+<div class="row col-12">
+    <table [formGroup]="group" class="table table-sm question-table" *ngIf="sugaryHospGroupArr.controls.length > 0">
+        <thead>
+            <tr class="row">
+                <th class="col-1"></th>
+                <ng-container *ngIf="sugaryHospInfo.hasSugary">
+                    <th class="col-2">手术日</th>
+                    <th class="col-3">手术名</th>
+                </ng-container>
+                <ng-container *ngIf="sugaryHospInfo.hasHosp">
+                    <th class="col-2">住院日</th>
+                    <th class="col-1">住院日数</th>
+                </ng-container>
+                <th class="col-3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let sugaryHospGroup of sugaryHospGroupArr.controls; let i = index;">
+                <tr class="row" [formGroup]="sugaryHospGroup">
+                    <td class="col-1">{{rowTitle}}{{i + 1}}</td>
+                    <ng-container *ngIf="sugaryHospInfo.hasSugary">
+                        <td class="col-2 form-inline">
+                            <select class="custom-select custom-select-sm" formControlName="sugaryYear">
+                                <option></option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                            </select>
+                            <label class="col-form-label-sm">年</label>&nbsp;&nbsp;
+                            <select class="custom-select custom-select-sm" formControlName="sugaryMonth">
+                                <option></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <label class="col-form-label-sm">月</label>
+                        </td>
+                        <td class="col-3">
+                            <select class="custom-select custom-select-sm" formControlName="sugaryId">
+                                <option></option>
+                                <option value="1">整容</option>
+                                <option value="2">变性</option>
+                                <option value="3">毁容</option>
+                            </select>
+                        </td>
+                    </ng-container>
+                    <ng-container *ngIf="sugaryHospInfo.hasHosp">
+                        <td class="col-2 form-inline">
+                            <select class="custom-select custom-select-sm" formControlName="hospYear">
+                                <option></option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                            </select>
+                            <label class="col-form-label-sm">年</label>&nbsp;&nbsp;
+                            <select class="custom-select custom-select-sm" formControlName="hospMonth">
+                                <option></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <label class="col-form-label-sm">月</label>
+                        </td>
+                        <td class="col-1">
+                            <select class="custom-select custom-select-sm" formControlName="hospPeriod">
+                                <option></option>
+                                <option value="1">一周</option>
+                                <option value="2">一个月</option>
+                                <option value="3">一年</option>
+                            </select>
+                        </td>
+                    </ng-container>
+                    <td class="col-3">
+
+                        <ng-container *ngIf="i == 0 && sugaryHospGroupArr.controls.length == 1; else elseTemplate">
+                            <button class="btn btn-sm btn-outline-primary addBtn" (click)="addRow(i)">添加</button>
+                            <button class="btn btn-sm btn-outline-primary removeBtn" style="display: none;" (click)="removeRow(i)">删除</button>
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            <ng-container *ngIf="i < sugaryHospGroupArr.controls.length - 1; else elseTemplate">
+                                <button class="btn btn-sm btn-outline-primary addBtn" style="display: none;" (click)="addRow(i)">添加</button>
+                                <button class="btn btn-sm btn-outline-primary removeBtn" (click)="removeRow(i)">删除</button>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <button class="btn btn-sm btn-outline-primary addBtn" (click)="addRow(i)">添加</button>
+                                <button class="btn btn-sm btn-outline-primary removeBtn" (click)="removeRow(i)">删除</button>
+                            </ng-template>
+                        </ng-template>
+
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

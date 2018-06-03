@@ -1,0 +1,20 @@
+<div class="row col-12">
+    <table [formGroup]="group" class="table table-sm question-table" *ngIf="questionList.length > 0">
+        <thead>
+            <tr class="row">
+                <th class="col-1"></th>
+                <th class="col-8">问题</th>
+                <th class="col-3">回答</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row" *ngFor="let question of questionList; let i = index;">
+                <td class="col-1">问题{{i + 1}}</td>
+                <td class="col-8">{{question.content}}</td>
+                <td class="col-3">
+                    <ng-container dynamicQuestion [question]="question" [group]="questionGroup"></ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

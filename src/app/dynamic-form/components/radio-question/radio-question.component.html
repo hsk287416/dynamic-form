@@ -1,0 +1,8 @@
+<div [formGroup]="group">
+    <ng-container *ngFor="let answer of question.answerList; let i = index;">
+        <div class="custom-control custom-radio custom-control-inline">
+            <input class="custom-control-input" type="radio" name="{{question.name}}" [formControlName]="question.name" id="{{question.name + i}}" value="{{answer.id}}">
+            <label class="custom-control-label" for="{{question.name + i}}">{{answer.value}}</label>
+        </div>
+    </ng-container>
+</div>
