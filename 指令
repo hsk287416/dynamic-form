@@ -1,0 +1,15 @@
+ngClass:
+我们经常用动态添加或删除 CSS 类的方式来控制元素如何显示。 通过绑定到NgClass，可以同时添加或移除多个类。
+CSS 类绑定是添加或删除单个类的最佳途径。前文也有提到过。
+<div [class.special]="isSpecial">The class binding is special</div>  
+常量绑定：<div [ngClass]="{'text-success': true }"></div>  
+表达式绑定：<div [ngClass]="{'text-success': person.country === 'CN'}"></div>  
+绑定多个class：<div [ngClass]="{'text-success': person.country === 'CN'， 'color': true}"></div>  
+
+ngStyle：
+我们可以根据组件的状态动态设置内联样式。 NgStyle绑定可以同时设置多个内联样式。
+样式绑定(http://blog.csdn.net/it_rod/article/details/79429457#t18)是设置单一样式值的简单方式。
+如果要同时设置多个内联样式，NgStyle指令可能是更好的选择。
+常量绑定：<div [ngStyle]="{'background-color': 'green'}"></div>  
+绑定表达式：<div [ngStyle]="{'background-color': person.country === 'UK' ? 'green' : 'red'}">  
+绑定多个style样式：<div [ngStyle]="{'background-color': person.country === 'UK' ? 'green' : 'red'， 'color': red}">  
